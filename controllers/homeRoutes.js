@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const { Challenge } = require('../models');
+const router = require("express").Router();
+const { Challenge } = require("../models");
 
 // get homepage (/)
 router.get("/", async (req, res) => {
@@ -17,18 +17,26 @@ router.get("/", async (req, res) => {
 });
 
 // get login (/login)
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
+router.get("/login", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("login");
+});
 
 // get logout (/logout)
 
 // get signup (/signup)
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("signup");
+});
 
 // get profile page(/:userid)
 
