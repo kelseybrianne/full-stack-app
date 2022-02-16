@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Challenge extends Model {}
 
@@ -12,23 +12,19 @@ Challenge.init(
       autoIncrement: true,
     },
     title: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
-        type: DataTypes.STRING(1234),
-        allowNull: false,
+      type: DataTypes.STRING(1234),
+      allowNull: false,
     },
     starting_date: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      ending_date: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-    challenge_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    ending_date: {
+      type: DataTypes.DATE,
       allowNull: false,
     }
   },
@@ -37,7 +33,7 @@ Challenge.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'challenge',
+    modelName: "challenge",
   }
 );
 module.exports = Challenge;

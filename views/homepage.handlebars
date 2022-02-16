@@ -1,0 +1,63 @@
+<nav>
+  <div class="header">
+    <h2 id="logo">Join In</h2>
+    <!-- <div class="icon"> -->
+    <i class="fas fa-user-circle icon"></i>
+    <!-- </div> -->
+  </div>
+</nav>
+<div class="main">
+  <div class="feed">
+    <div class="post">
+      <div class="challenge-header">
+        <h1 class="challenge-title">Gallon a Day</h1>
+        <h3 class="challenge-duration">Ends: April 1st</h3>
+      </div>
+      <p class="challenge-desc">Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua.</p>
+      <button class="join-in-btn">Join</button>
+    </div>
+    <div class="post">
+      <div class="challenge-header">
+        <h1 class="challenge-title">Cat Selfie</h1>
+        <h3 class="challenge-duration">Ends: March 4th</h3>
+      </div>
+      <p class="challenge-desc">Post a current picture of your cat every day.</p>
+      <button class="join-in-btn">Join</button>
+    </div>
+    <div class="post">
+      <div class="challenge-header">
+        <h1 class="challenge-title">100 Days of Gratitude</h1>
+        <h3 class="challenge-duration">Ends: April 1st</h3>
+      </div>
+      <p class="challenge-desc">Post something you're grateful for every day!</p>
+      <button class="join-in-btn">Join</button>
+    </div>
+    {{#each challenges as |challenge|}}
+    <div class="post">
+      <div class="challenge-header">
+        <h1 class="challenge-title">{{challenge.title}}</h1>
+        <h3 class="challenge-duration">Ends: {{challenge.ending_date}}</h3>
+      </div>
+      <p class="challenge-desc">{{challenge.description}}</p>
+      <button class="join-in-btn">Join</button>
+    </div>
+    {{/each}}
+  </div>
+  <aside>
+    <h2>Your Challenges</h2>
+    <ul class="challenge-list">
+      <li>Gallon a Day x transform: translateX(-150px);</li>
+      <li>Gallon a Day</li>
+      <li>Gallon a Day</li>
+      <li>Gallon a Day</li>
+    </ul>
+    <p class="tinytext">&copy; 2022 Pod 1</p>
+  </aside>
+</div>

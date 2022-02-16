@@ -98,10 +98,11 @@ p {
 }
 
 .tinytext {
-    font-size: .8rem;
-    color: rgb(187, 187, 187);
+    font-size: .9rem;
+    color: rgb(209, 209, 209);
     padding-top: 20px;
-    text-transform: uppercase;
+    letter-spacing: .3;
+    font-family: "Bebas Neue", cursive;
 }
 
 @media screen and (min-width: 1000px) {
@@ -116,7 +117,7 @@ h2 {
   .header {
     width: 880px;
     margin: 0px auto;
-    transform: translateX(-30px);
+    transform: translateX(-42px);
   }
 
   .main {
