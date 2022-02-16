@@ -11,9 +11,11 @@ nav {
   left: 0px;
   background-color: white;
   min-width: 100vw;
+  /* display: flex; */
 }
 
 .header {
+    justify-content: space-between;
   display: flex;
   /* justify-content: center; */
   font-size: 1.7rem;
@@ -48,6 +50,7 @@ h2 {
   background-color: white;
   border: 1px solid #e8e8e4;
   padding: 20px;
+  margin: 20px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,13 +97,26 @@ p {
   line-height: 1.3;
 }
 
+.tinytext {
+    font-size: .8rem;
+    color: rgb(187, 187, 187);
+    padding-top: 20px;
+    text-transform: uppercase;
+}
+
 @media screen and (min-width: 1000px) {
     nav {
         z-index: 5;
     }
+
+h2 {
+    margin: 0px;
+}
+
   .header {
-    width: 70vw;
+    width: 880px;
     margin: 0px auto;
+    transform: translateX(-30px);
   }
 
   .main {
@@ -116,8 +132,8 @@ p {
 
   aside {
     display: block;
-    padding: 20px 0px;
-    width: 300px;
+    padding: 30px 0px;
+    width: 310px;
     position: fixed;
     transform: translateX(350px);
     /* left: 1050px; */
