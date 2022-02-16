@@ -17,6 +17,14 @@ router.get("/", async (req, res) => {
 });
 
 // get login (/login)
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
 
 // get logout (/logout)
 
