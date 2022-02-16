@@ -1,0 +1,160 @@
+body {
+  color: rgb(53, 53, 53);
+}
+
+nav {
+  height: 55px;
+  padding: 15px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  min-width: 100vw;
+}
+
+.header {
+  display: flex;
+  /* justify-content: center; */
+  font-size: 1.7rem;
+}
+
+.header i {
+  /* color: black; */
+}
+
+h2 {
+  margin: 0px auto;
+  font-family: "Bebas Neue", cursive;
+}
+
+.icon {
+  color: #b6c2bb;
+}
+
+.main {
+  background-color: rgb(247, 247, 247);
+  height: 3000px;
+  margin: 0px auto;
+  padding-top: 55px;
+}
+
+.feed {
+  padding: 10px 20px;
+  /* margin: 0px auto; */
+}
+
+.post {
+  background-color: white;
+  border: 1px solid #e8e8e4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.challenge-title {
+  padding-bottom: 5px;
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+}
+
+.challenge-duration {
+  padding-bottom: 5px;
+  font-family: "Bebas Neue", cursive;
+  color: #e0d9cf;
+}
+
+.challenge-header {
+  padding-bottom: 15px;
+}
+
+.challenge-desc {
+  font-family: "Raleway", sans-serif;
+}
+
+.join-in-btn {
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 1.2rem;
+  background-color: #b6c2bb;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-family: "Bebas Neue", cursive;
+  /* width: 100px; */
+}
+
+aside {
+  display: none;
+}
+
+p {
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 1000px) {
+    nav {
+        z-index: 5;
+    }
+  .header {
+    width: 70vw;
+    margin: 0px auto;
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+  }
+
+  .feed {
+    width: 700px;
+    transform: translateX(-150px);
+  }
+
+  aside {
+    display: block;
+    padding: 20px 0px;
+    width: 300px;
+    position: fixed;
+    transform: translateX(350px);
+    /* left: 1050px; */
+  }
+
+  aside h2 {
+    font-size: 1.3rem;
+    color: rgb(38, 38, 38);
+    padding-bottom: 15px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .challenge-list li {
+    padding-bottom: 10px;
+    font-family: "Raleway", sans-serif;
+    color: rgb(89, 89, 89);
+  }
+}
+
+/* @media screen and (min-width: 1000px) {
+  .feed {
+    width: 600px;
+    margin-left: 100px;
+  }
+
+  aside {
+    left: 700px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feed {
+    width: 700px;
+    margin-left: 250px;
+  }
+
+  aside {
+    left: 700px;
+  }
+} */
