@@ -14,6 +14,65 @@ nav {
   /* display: flex; */
 }
 
+.pic {
+  max-height: 100vh;
+  opacity: .6;
+  position: absolute;
+  z-index: 0;
+}
+
+.login {
+  width: 300px;
+  margin: 0px auto;
+  padding-top: 20vh;
+  z-index: 1;
+}
+
+.login h1 {
+  font-size: 6rem;
+  font-family: "Bebas Neue", cursive;
+  text-align: center;
+  /* letter-spacing: .9rem; */
+}
+
+.btn-custom {
+  width: 100%;
+  background-color: #b6c2bb;
+  border: 1px solid rgb(233, 233, 233);
+  margin-top: 10px;
+}
+
+#create-account {
+  padding: 10px 0px;
+  text-align: center;
+}
+
+#create-account a {
+  text-decoration: underline;
+  text-decoration-color: #b6c2bb;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.join-in-btn {
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 1.2rem;
+  background-color: #b6c2bb;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-family: "Bebas Neue", cursive;
+  /* width: 100px; */
+}
+
+.btn-custom:hover {
+  background-color: #c9d4ce;
+  border: 1px solid #b5c0bb;
+}
+
 .header {
     justify-content: space-between;
   display: flex;
@@ -77,18 +136,6 @@ h2 {
   font-family: "Raleway", sans-serif;
 }
 
-.join-in-btn {
-  margin-top: 20px;
-  padding: 5px;
-  font-size: 1.2rem;
-  background-color: #b6c2bb;
-  color: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  font-family: "Bebas Neue", cursive;
-  /* width: 100px; */
-}
-
 aside {
   display: none;
 }
@@ -105,6 +152,10 @@ p {
     font-family: "Bebas Neue", cursive;
 }
 
+a:hover {
+  color: inherit;
+}
+
 @media screen and (min-width: 1000px) {
     nav {
         z-index: 5;
@@ -112,6 +163,15 @@ p {
 
 h2 {
     margin: 0px;
+}
+
+.pic {
+  width: 60vw;
+  position: static;
+}
+
+.flex-container {
+  display: flex;
 }
 
   .header {
