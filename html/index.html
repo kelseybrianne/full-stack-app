@@ -9,56 +9,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css/reset.css">
     <link rel="stylesheet" href="../public/css/style.css">
 
 </head>
 <body>
-    <nav>
-        <div class="header">
-            <h2 id="logo">Join In</h2>
-            <!-- <div class="icon"> -->
-                <i class="fas fa-user-circle icon"></i>
-            <!-- </div> -->
+    <div class="flex-container">
+        <img class="pic" src="susan-wilkinson-xxsPx6dwmmc-unsplash.jpg">
+        <div class="login">
+            <h1>Join In</h1>
+            <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="username-login" aria-describedby="emailHelp" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-custom">Log in</button>
+                <h4 id="create-account">Don't have an account? <a href="">Sign up</a></h4>
+              </form>
         </div>
-    </nav>
-    <div class="main">
-        <div class="feed">
-            <div class="post">
-                <div class="challenge-header">
-                    <h1 class="challenge-title">Gallon a Day</h1>
-                    <h3 class="challenge-duration">Ends: April 1st</h3>
-                </div>
-                <p class="challenge-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="join-in-btn">Join</button>  
-            </div>
-            <div class="post">
-                <div class="challenge-header">
-                    <h1 class="challenge-title">Cat Selfie</h1>
-                    <h3 class="challenge-duration">Ends: March 4th</h3>
-                </div>
-                <p class="challenge-desc">Post a current picture of your cat every day.</p>
-                <button class="join-in-btn">Join</button>  
-            </div>
-            <div class="post">
-                <div class="challenge-header">
-                    <h1 class="challenge-title">100 Days of Gratitude</h1>
-                    <h3 class="challenge-duration">Ends: April 1st</h3>
-                </div>
-                <p class="challenge-desc">Post something you're grateful for every day!</p>
-                <button class="join-in-btn">Join</button>  
-            </div>
-        </div>
-        <aside>
-            <h2>Your Challenges</h2>
-            <ul class="challenge-list">
-                <li>Gallon a Day x transform: translateX(-150px);</li>
-                <li>Gallon a Day</li>
-                <li>Gallon a Day</li>
-                <li>Gallon a Day</li>
-            </ul>
-            <p class="tinytext">&copy; 2022 Pod 1</p>
-        </aside>
     </div>
 </body>
 </html>
