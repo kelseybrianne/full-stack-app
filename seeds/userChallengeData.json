@@ -1,0 +1,14 @@
+[
+    {
+      "challenge_id": "Music Near Me",
+      "user_id": "A mobile app that will send you notifications whenever a concert is playing in your area."
+    },
+    {
+      "challenge_id": "The Ultimate Tech Quiz",
+      "user_id": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+    },
+    {
+      "challenge_id": "Roll 'Em Up",
+      "user_id": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+    }
+  ]
