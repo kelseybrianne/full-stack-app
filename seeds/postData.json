@@ -1,11 +1,20 @@
 [
     {
-      "text": "Music Near Me"
+      "id": 1,
+      "text": "Music Near Me",
+      "challenge_id": 1,
+      "user_id": 1
     },
     {
-      "text": "The Ultimate Tech Quiz"
+      "id": 2,
+      "text": "The Ultimate Tech Quiz",
+      "challenge_id": 2,
+      "user_id": 2
     },
     {
-      "text": "Roll 'Em Up"
+      "id": 3,
+      "text": "Roll 'Em Up",
+      "challenge_id": 3,
+      "user_id": 3
     }
   ]

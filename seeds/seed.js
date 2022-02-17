@@ -14,14 +14,15 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+  
+  await Challenge.bulkCreate(challengeData, {
+    returning: true,
+  })
 
   await UserChallenge.bulkCreate(userChallengeData, {
     returning: true,
   })
 
-  await Challenge.bulkCreate(challengeData, {
-    returning: true,
-  })
 
   await Post.bulkCreate(postData, {
     returning: true,
