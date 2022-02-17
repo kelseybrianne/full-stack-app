@@ -7,9 +7,15 @@
         <a href="/profile">
           <p>Profile</p>
         </a>
+        {{#if logged_in}}
+        <a href="/logout">
+          <p>Log out</p>
+        </a>
+        {{else}}
         <a href="/login">
           <p>Log in</p>
         </a>
+        {{/if}}
       </div>
     </a>
   </div>
