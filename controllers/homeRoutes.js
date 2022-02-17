@@ -35,7 +35,7 @@ router.get("/signup", (req, res) => {
     return;
   }
 
-  res.render("signup");
+  res.render("signup"); 
 });
 
 // get profile page(/:userid)
