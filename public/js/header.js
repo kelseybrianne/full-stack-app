@@ -12,10 +12,11 @@ const renderDropdown = (event) => {
     dropdownMenu.addClass("hidden");
   }
 
-  document.addEventListener("click", (event) => {
-    event.preventDefault();
-    dropdownMenu.addClass("hidden");
-  });
+//   document.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     dropdownMenu.addClass("hidden");
+//   });
 };
 
 profileIcon.addEventListener("click", renderDropdown);
