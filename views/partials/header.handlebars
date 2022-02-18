@@ -10,23 +10,25 @@
         data-target="#exampleModal"
       ><i class="fas fa-plus-circle icon"></i>
       </a>
-      <a href="" id="profile-icon">
-        <i class="fas fa-user-circle icon"></i>
-        <div id="dropdown-menu" class="hidden">
-          <a href="/profile">
-            <p>Profile</p>
-          </a>
+      <a class="dropdown" id="profile-icon">
+        <a
+          class=""
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fas fa-user-circle icon"></i>
+        </a>
+        <div class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/profile">Profile</a>
+          <div class="dropdown-divider"></div>
           {{#if logged_in}}
-            <a href="/logout">
-              <p>Log out</p>
-            </a>
+          <a class="dropdown-item" href="/logout">Log out</a>
           {{else}}
-            <a href="/login">
-              <p>Log in</p>
-            </a>
+          <a class="dropdown-item" href="/login">Log in</a>
           {{/if}}
         </div>
-      </a>
+      </div>
 
     </div>
   </div>
@@ -68,7 +70,9 @@
             <textarea
               class="form-control"
               id="description"
-              placeholder="Description" rows="10"></textarea>
+              placeholder="Description"
+              rows="10"
+            ></textarea>
           </div>
         </form>
       </div>
