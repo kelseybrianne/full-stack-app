@@ -15,10 +15,9 @@
   <aside>
     <h2>Your Challenges</h2>
     <ul class="challenge-list">
-      <li>Gallon a Day</li>
-      <li>Gallon a Day</li>
-      <li>Gallon a Day</li>
-      <li>Gallon a Day</li>
+      {{#each userChallenges as |userChallenge|}}
+        <li>{{userChallenge.title}}</li>
+      {{/each}}
     </ul>
     <p class="tinytext">&copy; 2022 Pod 1</p>
   </aside>
