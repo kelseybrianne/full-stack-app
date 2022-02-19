@@ -21,12 +21,24 @@ Post.belongsTo(Challenge, {
 
 User.belongsToMany(Challenge, {
   foreignKey: "user_id",
+  otherKey: "challenge_id",
   through: UserChallenge,
 });
 
 Challenge.belongsToMany(User, {
   foreignKey: "challenge_id",
+  otherKey: "user_id",
   through: UserChallenge,
 });
+
+// UserChallenge.belongsToMany(User, {
+//   foreignKey: "user_id",
+//   targetKey: "id",
+// })
+
+// UserChallenge.belongsToMany(Challenge, {
+//   foreignKey: "challenge_id",
+//   targetKey: "id",
+// })
 
 module.exports = { User, Post, Challenge, UserChallenge };
