@@ -37,6 +37,16 @@ nav {
   text-align: center;
 }
 
+#invalid {
+  color: rgb(161, 38, 38);
+  font-size: .9rem;
+}
+
+.hide {
+  position: absolute;
+  display: none;
+}
+
 .large {
   width: 100%;
   margin-top: 10px;
@@ -45,6 +55,10 @@ nav {
 .btn-custom {
   background-color: #b6c2bb;
   border: 1px solid rgb(233, 233, 233);
+}
+
+.small {
+  width: 200px;
 }
 
 #create-account {
