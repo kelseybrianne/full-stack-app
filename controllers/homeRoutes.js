@@ -4,6 +4,11 @@ const { Challenge, UserChallenge, User } = require("../models");
 // get homepage (/)
 router.get("/", async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
+  const challengeData = await Challenge.findAll();
+
+  const challenges = challengeData.map((challenge) => challenge.toJSON())
+
+  // get users challenges
   const userChallengeData = await Challenge.findAll({
     include:[
       {
@@ -15,22 +20,13 @@ router.get("/", async (req, res) => {
         where: {id: 1}
       }
     ]
-    // attributes: { exclude: ['password'] },
-    // order: [['name', 'ASC']],
   });
   const userChallenges = userChallengeData.map((challenge) => challenge.toJSON());
 
-
-  // get users challenges
-
-
-
-
   res.render("homepage", {
+    challenges,
     userChallenges,
     logged_in: req.session.logged_in,
-
-    // userChallenges
   });
 });
 
