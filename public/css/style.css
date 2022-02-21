@@ -19,7 +19,7 @@ nav {
 
 .pic {
   max-height: 100vh;
-  opacity: .6;
+  opacity: 0.6;
   position: absolute;
   z-index: 0;
 }
@@ -39,7 +39,7 @@ nav {
 
 #invalid {
   color: rgb(161, 38, 38);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .hide {
@@ -92,7 +92,7 @@ nav {
 }
 
 .header {
-    justify-content: space-between;
+  justify-content: space-between;
   display: flex;
   font-size: 1.7rem;
 }
@@ -102,7 +102,7 @@ nav {
 }
 
 #profile-icon {
-  position: relative
+  position: relative;
 }
 
 #dropdown-menu {
@@ -179,11 +179,11 @@ p {
 }
 
 .tinytext {
-    font-size: .9rem;
-    color: rgb(209, 209, 209);
-    padding-top: 20px;
-    letter-spacing: .3;
-    font-family: "Bebas Neue", cursive;
+  font-size: 0.9rem;
+  color: rgb(209, 209, 209);
+  padding-top: 20px;
+  letter-spacing: 0.3;
+  font-family: "Bebas Neue", cursive;
 }
 
 a:hover {
@@ -191,30 +191,49 @@ a:hover {
   text-decoration: none;
 }
 
+.profile-header {
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-pic {
+  font-size: 5rem;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  color: var(--green);
+  color: lightgray;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-family: "Raleway", sans-serif;
+}
+
 @media screen and (min-width: 1000px) {
-    nav {
-        z-index: 5;
-    }
+  nav {
+    z-index: 5;
+  }
 
-h2 {
+  h2 {
     margin: 0px;
-}
+  }
 
-.pic {
-  width: 60vw;
-  position: static;
-}
+  .pic {
+    width: 60vw;
+    position: static;
+  }
 
-.flex-container {
-  display: flex;
-}
+  .flex-container {
+    display: flex;
+  }
 
   .header {
     width: 850px;
     margin: 0px auto;
   }
 
-  .main {
+  .homepage-main {
     display: flex;
     justify-content: center;
     z-index: 0;
@@ -245,5 +264,9 @@ h2 {
     font-family: "Raleway", sans-serif;
     color: rgb(89, 89, 89);
   }
-}
 
+  .profile-feed {
+    margin: 0px auto;
+    transform: none;
+  }
+}

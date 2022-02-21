@@ -1,23 +1,33 @@
 [
     {
       "id": 1,
-      "title": "Music Near Me",
-      "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-      "starting_date": "01/01/2022",
+      "title": "Furry Selfie Series",
+      "description": "Post a pic of your furry friend every day ",
+      "ending_date": "04/01/2022"
+    },
+    {
+      "id": 1,
+      "title": "75 Hard",
+      "description": "Every day you must: Follow any nutrition plan with zero alcohol and no cheat meal. Complete two 45-minute workouts every day, one of which needs to be done outside. Drink a gallon of water. Read 10 pages of an educational or self-improvement book. And take a progress picture.",
+      "starting_date": "02/21/2022",
+      "ending_date": "05/07/2022"
+    },
+    {
+      "id": 1,
+      "title": "Algorithm a Day",
+      "description": "Solve the daily algorithm and post your solution. No cheating!",
       "ending_date": "02/01/2022"
     },
     {
       "id": 2,
       "title": "The Ultimate Tech Quiz",
       "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-      "starting_date": "01/01/2022",
       "ending_date": "02/01/2022"
     },
     {
       "id": 3,
       "title": "Roll 'Em Up",
       "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-      "starting_date": "01/01/2022",
       "ending_date": "02/01/2022"
     }
   ]
