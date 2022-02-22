@@ -19,7 +19,7 @@ nav {
 
 .pic {
   max-height: 100vh;
-  opacity: .6;
+  opacity: 0.6;
   position: absolute;
   z-index: 0;
 }
@@ -39,7 +39,7 @@ nav {
 
 #invalid {
   color: rgb(161, 38, 38);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .hide {
@@ -92,7 +92,7 @@ nav {
 }
 
 .header {
-    justify-content: space-between;
+  justify-content: space-between;
   display: flex;
   font-size: 1.7rem;
 }
@@ -101,14 +101,18 @@ nav {
   font-size: 1rem;
 }
 
-#profile-icon {
-  position: relative
+.flex {
+  display: flex;
 }
 
-#dropdown-menu {
+.dropdown-menu {
   width: 220px;
   box-shadow: 1px 1px 10px rgb(228, 228, 228);
+}
+
+.dropdown-item {
   font-family: "Raleway", sans-serif;
+  font-weight: 200;
 }
 
 .hidden {
@@ -160,6 +164,7 @@ h2 {
   padding-bottom: 5px;
   font-family: "Bebas Neue", cursive;
   color: #e0d9cf;
+  font-size: 1.5rem;
 }
 
 .challenge-header {
@@ -168,6 +173,7 @@ h2 {
 
 .challenge-desc {
   font-family: "Raleway", sans-serif;
+  font-weight: 200;
 }
 
 aside {
@@ -178,12 +184,25 @@ p {
   line-height: 1.3;
 }
 
+.post-username {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+}
+
+.light-text {
+  color:rgb(128, 128, 128);
+}
+
 .tinytext {
-    font-size: .9rem;
-    color: rgb(209, 209, 209);
-    padding-top: 20px;
-    letter-spacing: .3;
-    font-family: "Bebas Neue", cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.3;
+  font-family: "Bebas Neue", cursive;
+}
+
+.copyright {
+  color: rgb(209, 209, 209);
+  padding-top: 20px;
+  font-size: .9rem;
 }
 
 a:hover {
@@ -191,30 +210,51 @@ a:hover {
   text-decoration: none;
 }
 
+.profile-header {
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.profile-pic {
+  font-size: 5rem;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  color: var(--green);
+  color: lightgray;
+}
+
+.username {
+  font-size: 1.8rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+}
+
 @media screen and (min-width: 1000px) {
-    nav {
-        z-index: 5;
-    }
+  nav {
+    z-index: 5;
+  }
 
-h2 {
+  h2 {
     margin: 0px;
-}
+  }
 
-.pic {
-  width: 60vw;
-  position: static;
-}
+  .pic {
+    width: 60vw;
+    position: static;
+  }
 
-.flex-container {
-  display: flex;
-}
+  .flex-container {
+    display: flex;
+  }
 
   .header {
     width: 850px;
     margin: 0px auto;
   }
 
-  .main {
+  .homepage-main {
     display: flex;
     justify-content: center;
     z-index: 0;
@@ -234,16 +274,26 @@ h2 {
   }
 
   aside h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
     font-size: 1.3rem;
     color: rgb(38, 38, 38);
     padding-bottom: 15px;
-    font-family: "Raleway", sans-serif;
   }
 
   .challenge-list li {
     padding-bottom: 10px;
     font-family: "Raleway", sans-serif;
+    font-weight: 200;
     color: rgb(89, 89, 89);
   }
-}
 
+  .profile-header {
+    width: 700px;
+  }
+
+  .profile-feed {
+    margin: 0px auto;
+    transform: none;
+  }
+}

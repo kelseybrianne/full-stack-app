@@ -1,15 +1,11 @@
 const router = require("express").Router();
+const { Op } = require("sequelize");
 const { Challenge, UserChallenge, User } = require("../models");
 
 // get homepage (/)
 router.get("/", async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  const challengeData = await Challenge.findAll();
-
-  const challenges = challengeData.map((challenge) => challenge.toJSON())
-
-  // get users challenges
-  const userChallengeData = await Challenge.findAll({
+  const challengeData = await Challenge.findAll({
     include:[
       {
         model: User,
@@ -17,17 +13,54 @@ router.get("/", async (req, res) => {
           model: UserChallenge,
           // attributes: ["challenge_id", "user_id"],
         }, 
-        where: {id: 1}
+        where: {
+          // [Op.and]: [{ a: 5 }, { b: 6 }],            // (a = 5) AND (b = 6)
+          // [Op.or]: [{ a: 5 }, { b: 6 }],             // (a = 5) OR (b = 6)
+          id: {
+            // Basics
+            // [Op.eq]: 3,                              // = 3
+            [Op.ne]: req.session.user_id,                             // != 20
+            // [Op.is]: null,                           // IS NULL
+            // [Op.not]: true,                          // IS NOT TRUE
+            // [Op.or]: [5, 6],                         // (someAttribute = 5) OR (someAttribute = 6)
+          }
+        }  
       }
-    ]
+    ]  
   });
-  const userChallenges = userChallengeData.map((challenge) => challenge.toJSON());
+
+  const challenges = challengeData.map((challenge) => challenge.toJSON())
+
+  // get users challenges
+  if(req.session.logged_in) {
+    const userChallengeData = await Challenge.findAll({
+      include:[
+        {
+          model: User,
+          through: {
+            model: UserChallenge,
+            // attributes: ["challenge_id", "user_id"],
+          }, 
+          where: {id: 1}
+        }
+      ]
+    });
+  
+    userChallenges = userChallengeData.map((challenge) => challenge.toJSON());
+
+    res.render("homepage", {
+      challenges,
+      userChallenges,
+      logged_in: req.session.logged_in,
+    });
+    return;
+  }
 
   res.render("homepage", {
-    challenges,
-    userChallenges,
-    logged_in: req.session.logged_in,
-  });
+    // challenges,
+    logged_in: req.session.logged_in
+  })
+
 });
 
 // get login (/login)
@@ -53,7 +86,9 @@ router.get("/signup", (req, res) => {
 });
 
 // get profile page(/:userid)
-
+router.get("/profile", (req, res) => {
+  res.render("profile");
+})
 
 
 
