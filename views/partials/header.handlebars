@@ -2,16 +2,20 @@
   <div class="header">
     <a href="/"><h2 id="logo">Join In</h2></a>
     <div>
-      <!-- Button trigger modal -->
-      <a type="button" {{! class="btn btn-primary" }} data-toggle="modal" data-target="#exampleModal"><i
-          class="fas fa-plus-circle icon"></i>
-      </a>
       <a class="dropdown" id="profile-icon">
         <a class="" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-user-circle icon"></i>
         </a>
         <div class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {{#if logged_in}}
           <a class="dropdown-item" href="/profile">Profile</a>
+          <!-- Button trigger NEW CHALLENGE modal -->
+          <a class="dropdown-item" href="" data-toggle="modal" data-target="#newChallengeModal">New challenge</a>
+          <!-- Button trigger NEW POST modal -->
+          <a class="dropdown-item" href="" data-toggle="modal" data-target="#newPostModal">New post</a>
+          {{else}}
+          <a class="dropdown-item" href="/login">Profile</a>
+          {{/if}}
           <div class="dropdown-divider"></div>
           {{#if logged_in}}
           <a class="dropdown-item" href="/logout">Log out</a>
@@ -19,17 +23,17 @@
           <a class="dropdown-item" href="/login">Log in</a>
           {{/if}}
         </div>
-    </div>
+    </a>
 
   </div>
   </div>
 </nav>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- NEW CHALLENGE Modal -->
+<div class="modal fade" id="newChallengeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create new challenge</h5>
+        <h5 class="modal-title" id="exampleModalLabel">New challenge</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -46,6 +50,40 @@
             <p><input class="form-control small" placeholder="Ending date" type="text" id="datepicker"></p>
           </div>
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary btn-custom">Share</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEW POST Modal -->
+<div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="new-post-form">
+          <div class="form-group">
+            <label for="post-to-challenge">Example select</label>
+            <select class="form-control" id="post-to-challenge">
+              {{#each userChallenges as |userChallenge|}}
+              <option>{{userChallenge.title}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="description" placeholder="Challenge update" rows="10"></textarea>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

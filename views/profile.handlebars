@@ -2,22 +2,21 @@
 <div class="main">
 <div class="profile-header">
     <i class="fas fa-user profile-pic"></i>
-    <h3>Username</h3>
+    <h3 class="username">Username</h3>
 </div>
   <div class="profile-feed feed">
-      <div class="post">
-
-      </div>
-    {{!-- {{#each challenges as |challenge|}}
+    {{!-- {{#each challenges as |challenge|}} --}}
     <div class="post">
       <div class="challenge-header">
-        <h1 class="challenge-title">{{challenge.title}}</h1>
-        <h3 class="challenge-duration">Ends: {{challenge.ending_date}}</h3>
+        <!--Username-->
+        <h1 class="post-username">kbrianne</h1>
+        <!--Challenge title and date-->
+        <h1 class="challenge-desc light-text">Daily Algorithm &#183; 01/22/2022</h1>
       </div>
-      <p class="challenge-desc">{{challenge.description}}</p>
-      <button class="join-in-btn" data-id="{{challenge.id}}">Join</button>
+        <!--Content-->
+        <p class="challenge-desc">Algorithm solution goes here</p>
     </div>
-    {{/each}} --}}
+    {{!-- {{/each}} --}}
   </div>
 </div>
 

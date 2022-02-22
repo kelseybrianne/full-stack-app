@@ -2,7 +2,7 @@
 <div class="homepage-main main">
   <div class="feed">
     {{#each challenges as |challenge|}}
-    <div class="post">
+    <div class="post homepage-post">
       <div class="challenge-header">
         <h1 class="challenge-title">{{challenge.title}}</h1>
         <h3 class="challenge-duration">Ends: {{challenge.ending_date}}</h3>
@@ -19,7 +19,7 @@
         <li>{{userChallenge.title}}</li>
       {{/each}}
     </ul>
-    <p class="tinytext">&copy; 2022 Pod 1</p>
+    <p class="tinytext copyright">&copy; 2022 Pod 1</p>
   </aside>
 </div>
 

@@ -41,7 +41,7 @@ router.get("/", async (req, res) => {
             model: UserChallenge,
             // attributes: ["challenge_id", "user_id"],
           }, 
-          where: {id: req.session.user_id}
+          where: {id: 1}
         }
       ]
     });
