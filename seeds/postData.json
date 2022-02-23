@@ -1,20 +1,32 @@
 [
     {
       "id": 1,
-      "text": "Music Near Me",
-      "challenge_id": 1,
-      "user_id": 1
+      "text": "I'm grateful for angels watching over my parents and protecting them on their drive this weekend.",
+      "challenge_id": 6,
+      "user_id": 4
     },
     {
       "id": 2,
-      "text": "The Ultimate Tech Quiz",
-      "challenge_id": 2,
-      "user_id": 2
+      "text": "Solution goes here",
+      "challenge_id": 3,
+      "user_id": 4
     },
     {
       "id": 3,
-      "text": "Roll 'Em Up",
+      "text": "Progress pic",
+      "challenge_id": 2,
+      "user_id": 4
+    },
+    {
+      "id": 4,
+      "text": "Solution to algorithm",
       "challenge_id": 3,
-      "user_id": 3
+      "user_id": 1
+    },
+    {
+      "id": 5,
+      "text": "Solution to algorithm",
+      "challenge_id": 3,
+      "user_id": 2
     }
   ]

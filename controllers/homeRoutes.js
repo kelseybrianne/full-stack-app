@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Op } = require("sequelize");
-const { Challenge, UserChallenge, User } = require("../models");
+const { Challenge, UserChallenge, User, Post } = require("../models");
 
 // get homepage (/)
 router.get("/", async (req, res) => {
@@ -46,7 +46,7 @@ router.get("/", async (req, res) => {
       ]
     });
   
-    userChallenges = userChallengeData.map((challenge) => challenge.toJSON());
+    const userChallenges = userChallengeData.map((challenge) => challenge.toJSON());
 
     res.render("homepage", {
       challenges,
@@ -86,9 +86,28 @@ router.get("/signup", (req, res) => {
 });
 
 // get profile page(/:userid)
-router.get("/profile", (req, res) => {
-  res.render("profile");
-})
+router.get("/profile", async (req, res) => {
+  const postData = await Post.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+        where: {
+          id: req.session.user_id
+        }
+      },
+      {
+        model: Challenge,
+        attributes: ["title"]
+      }
+    ]
+  });
+  const posts = postData.map((post) => post.toJSON());
+
+  res.render("profile", {
+    posts,
+  })
+});
 
 
 
