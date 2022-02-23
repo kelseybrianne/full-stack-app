@@ -18,6 +18,25 @@ nav {
   z-index: 5;
 }
 
+.homepage-navbar {
+  display: flex;
+  margin-top: 15px;
+  border-bottom: 1px solid lightgray;
+  width: 146px;
+}
+
+.homepage-navbar h1{
+margin-bottom: -1px;
+padding-bottom: 15px;
+margin-right: 25px;
+font-family: "Raleway", sans-serif;
+font-weight: 200;
+}
+
+.is-active {
+  border-bottom: 1px solid rgb(136, 136, 136);
+}
+
 .pic {
   max-height: 100vh;
   opacity: 0.6;
