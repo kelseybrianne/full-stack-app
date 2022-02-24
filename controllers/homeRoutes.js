@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const { Op } = require("sequelize");
+const withAuth = require("../utils/auth");
 const { Challenge, UserChallenge, User, Post } = require("../models");
 
 // get homepage (/)
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
   const challengeData = await Challenge.findAll({
     include: [
@@ -41,7 +42,7 @@ router.get("/", async (req, res) => {
             model: UserChallenge,
             // attributes: ["challenge_id", "user_id"],
           },
-          where: { id: 1 },
+          where: { id: req.session.user_id },
         },
       ],
     });
@@ -87,7 +88,7 @@ router.get("/signup", (req, res) => {
 });
 
 // get profile page(/:userid)
-router.get("/profile", async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   const postData = await Post.findAll({
     include: [
       {
@@ -111,7 +112,7 @@ router.get("/profile", async (req, res) => {
   });
 });
 
-router.get("/feed", async (req, res) => {
+router.get("/feed", withAuth, async (req, res) => {
   const postData = await Post.findAll({
     include: [
       {
