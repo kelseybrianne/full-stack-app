@@ -7,18 +7,26 @@ const { Challenge, UserChallenge, User, Post } = require("../models");
 router.get("/", withAuth, async (req, res) => {
 
   // UserChallenge.findAll where user_id = current users
+  // const currentUserChallengeData = UserChallenge.findAll({
+  //   where: {
+  //     user_id: req.session.user_id
+  //   }
+  // })
 
   // Build a list of challenge ids the user does have (here we are mapping line 9 and returning a list of the challenge_id column)
+  // const currentUserChallenges = currentUserChallengeData.map(challenge => {
+  //   console.log(challenge);
+  //   // return challenge.challenge_id;
+  // })
 
-  // Send the rendered Handlebars.js template back as the response
-  const challengeData = await Challenge.findAll({
-    // where: {
-    //   id: {
-    //     // Where id is not in the list of known ids
-    //   }
-  });
+  // const challengeData = await Challenge.findAll({
+  //   // where: {
+  //   //   id: {
+  //   //     // Where id is not in the list of known ids
+  //   //   }
+  // });
 
-  const challenges = challengeData.map((challenge) => challenge.toJSON());
+  // const challenges = challengeData.map((challenge) => challenge.toJSON());
 
   // get users challenges
   if (req.session.logged_in) {
@@ -26,9 +34,9 @@ router.get("/", withAuth, async (req, res) => {
       include: [
         {
           model: User,
+          attributes: ["id", "username"],
           through: {
             model: UserChallenge,
-            // attributes: ["challenge_id", "user_id"],
           },
           where: { id: req.session.user_id },
         },
@@ -39,8 +47,27 @@ router.get("/", withAuth, async (req, res) => {
       challenge.toJSON()
     );
 
+    const userChallengeIds = userChallengeData.map(challenge => challenge.id)
+
+    const notjoinedChallengeData = await Challenge.findAll({
+      where: {
+        id: {
+          [Op.ne]: userChallengeIds
+        }
+      }
+    });
+
+    // const notJoinedChallenges = notJoinedData.map((challenge) => challenge.toJSON());
+
+    const notjoinedIds = notjoinedChallengeData.map((challenge) => challenge.id);
+
+
+    console.log(userChallengeIds)
+    console.log(notjoinedIds)
+
+
     res.render("homepage", {
-      challenges,
+      // challenges,
       userChallenges,
       logged_in: req.session.logged_in,
     });
@@ -97,7 +124,6 @@ router.get("/profile", withAuth, async (req, res) => {
   // Use req.session.user_id to get the current user
   const userData = await User.findByPk(req.session.user_id)
   const user = userData.get({ plain: true });
-  console.log(user);
 
   res.render("profile", {
     posts,
