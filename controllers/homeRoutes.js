@@ -105,9 +105,15 @@ router.get("/profile", withAuth, async (req, res) => {
     ],
   });
   const posts = postData.map((post) => post.toJSON());
+  // Use req.session.user_id to get the current user
+  
+  const userData = await User.findByPk(req.session.user_id)
+  const user = userData.get({ plain: true });
+  console.log(user);
 
   res.render("profile", {
     posts,
+    user,
     logged_in: req.session.logged_in,
   });
 });
