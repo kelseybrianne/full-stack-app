@@ -42,7 +42,7 @@ router.get("/", withAuth, async (req, res) => {
             model: UserChallenge,
             // attributes: ["challenge_id", "user_id"],
           },
-          where: { id: 1 },
+          where: { id: req.session.user_id },
         },
       ],
     });

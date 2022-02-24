@@ -4,22 +4,28 @@ const createChallenge = async (event) => {
     // Collect values from the login form
     const title = document.querySelector('#challenge-title').value.trim();
     const description = document.querySelector('#description').value.trim();
-    const endDate = document.querySelector('#datepicker').value.trim();
+    const ending_date = document.querySelector('#datepicker').value.trim();
   
-    console.log(title, description, endDate);
+    console.log(title, description, ending_date);
 
-    if (title && description && endDate) {
+    if (title && description && ending_date) {
       // Send a POST request to the API endpoint
     
       const response = await fetch('/api/challenge', {
         method: 'POST',
-        body: JSON.stringify({ title, description, endDate }),
+        body: JSON.stringify({ title, description, ending_date }),
         headers: { 'Content-Type': 'application/json' },
       });
+
+      // const response = await fetch("/api/userChallenge", {
+      //   method: "POST",
+      //   body: JSON.stringify({ challenge_id }),
+      //   headers: { "Content-Type": "application/json" },
+      // });
   
       if (response.ok) {
         // If successful, redirect the browser to the homepage
-        // document.location.replace('/');
+        document.location.reload();
       } else {
         alert(response.statusText);
       }
