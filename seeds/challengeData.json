@@ -16,24 +16,24 @@
       "id": 3,
       "title": "Algorithm a Day",
       "description": "Solve the daily algorithm and post your solution. No cheating!",
-      "ending_date": "02/01/2022"
+      "ending_date": "04/01/2022"
     },
     {
       "id": 4,
       "title": "The Ultimate Tech Quiz",
       "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-      "ending_date": "02/01/2022"
+      "ending_date": "03/01/2022"
     },
     {
       "id": 5,
       "title": "Roll 'Em Up",
       "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-      "ending_date": "02/01/2022"
+      "ending_date": "03/15/2022"
     },
     {
       "id": 6,
       "title": "Gratitude Journal",
       "description": "Post something you're grateful for every day",
-      "ending_date": "02/01/2022"
+      "ending_date": "05/13/2022"
     }
   ]
