@@ -224,11 +224,11 @@ p {
 }
 
 .post-username {
+  padding-bottom: 15px;
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
-  padding-bottom: 15px;
 }
 
 .light-text {
@@ -245,6 +245,14 @@ p {
   color: rgb(209, 209, 209);
   padding-top: 20px;
   font-size: .9rem;
+}
+
+.time-posted {
+  color: rgb(131, 131, 131);
+  font-size: .8rem;
+  margin-bottom: 0px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
 }
 
 a:hover {

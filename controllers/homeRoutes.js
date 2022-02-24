@@ -8,25 +8,14 @@ router.get("/", withAuth, async (req, res) => {
 
   // UserChallenge.findAll where user_id = current users
 
-  // Build a list of challenge ids the user does have
+  // Build a list of challenge ids the user does have (here we are mapping line 9 and returning a list of the challenge_id column)
 
   // Send the rendered Handlebars.js template back as the response
   const challengeData = await Challenge.findAll({
-    where: {
-      id: {
-        // Where id is not in the list of known ids
-      }
-    }
-    // include: [
-    //   {
-    //     model: User,
-    //     through: {
-    //       model: UserChallenge,
-    //       // attributes: ["challenge_id", "user_id"],
-    //     }, 
-    //     where: {id: req.session.user_id}
+    // where: {
+    //   id: {
+    //     // Where id is not in the list of known ids
     //   }
-    // ]
   });
 
   const challenges = challengeData.map((challenge) => challenge.toJSON());
@@ -104,11 +93,6 @@ router.get("/profile", withAuth, async (req, res) => {
     ],
   });
   const posts = postData.map((post) => post.toJSON());
-  // Use req.session.user_id to get the current user
-  
-  const userData = await User.findByPk(req.session.user_id)
-  const user = userData.get({ plain: true });
-  console.log(user);
 
   // Use req.session.user_id to get the current user
   const userData = await User.findByPk(req.session.user_id)

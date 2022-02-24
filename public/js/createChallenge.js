@@ -9,20 +9,14 @@ const createChallenge = async (event) => {
     console.log(title, description, ending_date);
 
     if (title && description && ending_date) {
+      
       // Send a POST request to the API endpoint
-    
       const response = await fetch('/api/challenge', {
         method: 'POST',
         body: JSON.stringify({ title, description, ending_date }),
         headers: { 'Content-Type': 'application/json' },
       });
 
-      // const response = await fetch("/api/userChallenge", {
-      //   method: "POST",
-      //   body: JSON.stringify({ challenge_id }),
-      //   headers: { "Content-Type": "application/json" },
-      // });
-  
       if (response.ok) {
         // If successful, redirect the browser to the homepage
         document.location.reload();
