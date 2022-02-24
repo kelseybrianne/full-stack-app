@@ -1,16 +1,13 @@
 const router = require("express").Router();
-const { Challenge, UserChallenge, User } = require("../models");
+const { Op } = require("sequelize");
+const withAuth = require("../utils/auth");
+const { Challenge, UserChallenge, User, Post } = require("../models");
 
 // get homepage (/)
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  const challengeData = await Challenge.findAll();
-
-  const challenges = challengeData.map((challenge) => challenge.toJSON())
-
-  // get users challenges
-  const userChallengeData = await Challenge.findAll({
-    include:[
+  const challengeData = await Challenge.findAll({
+    include: [
       {
         model: User,
         through: {
@@ -21,11 +18,38 @@ router.get("/", async (req, res) => {
       }
     ]
   });
-  const userChallenges = userChallengeData.map((challenge) => challenge.toJSON());
+
+  const challenges = challengeData.map((challenge) => challenge.toJSON());
+
+  // get users challenges
+  if (req.session.logged_in) {
+    const userChallengeData = await Challenge.findAll({
+      include: [
+        {
+          model: User,
+          through: {
+            model: UserChallenge,
+            // attributes: ["challenge_id", "user_id"],
+          },
+          where: { id: req.session.user_id },
+        },
+      ],
+    });
+
+    const userChallenges = userChallengeData.map((challenge) =>
+      challenge.toJSON()
+    );
+
+    res.render("homepage", {
+      challenges,
+      userChallenges,
+      logged_in: req.session.logged_in,
+    });
+    return;
+  }
 
   res.render("homepage", {
-    challenges,
-    userChallenges,
+    // challenges,
     logged_in: req.session.logged_in,
   });
 });
@@ -49,12 +73,72 @@ router.get("/signup", (req, res) => {
     return;
   }
 
-  res.render("signup"); 
+  res.render("signup");
 });
 
 // get profile page(/:userid)
+router.get("/profile", withAuth, async (req, res) => {
+  const postData = await Post.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+        where: {
+          id: req.session.user_id,
+        },
+      },
+      {
+        model: Challenge,
+        attributes: ["title"],
+      },
+    ],
+  });
+  const posts = postData.map((post) => post.toJSON());
 
+  res.render("profile", {
+    posts,
+    logged_in: req.session.logged_in,
+  });
+});
 
+router.get("/feed", withAuth, async (req, res) => {
+  const postData = await Post.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+      {
+        model: Challenge,
+        attributes: ["title"],
+      },
+    ],
+  });
+  const posts = postData.map((post) => post.toJSON());
 
+  // get users challenges
+
+  const userChallengeData = await Challenge.findAll({
+    include: [
+      {
+        model: User,
+        through: {
+          model: UserChallenge,
+          // attributes: ["challenge_id", "user_id"],
+        },
+        where: { id: 1 },
+      },
+    ],
+  });
+  const userChallenges = userChallengeData.map((challenge) =>
+    challenge.toJSON()
+  );
+
+  res.render("homepage-feed", {
+    posts,
+    userChallenges,
+    logged_in: req.session.logged_in,
+  });
+});
 
 module.exports = router;

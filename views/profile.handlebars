@@ -1,0 +1,20 @@
+{{> header}}
+<div class="main profile-main">
+    <div class="profile-header">
+        <i class="fas fa-user-circle large-profile profile"></i>
+        <h3 class="username">{{username}}</h3>
+    </div>
+    <div class="profile-feed feed">
+        {{#each posts as |post|}}
+        <div class="post">
+            <!--Username-->
+            <h1 class="post-username"><i class="fas fa-user-circle small-profile profile"></i> {{user.username}}</h1>
+            <!--Challenge title and date-->
+            <h1 class="post-title">{{challenge.title}} &#183; {{date_created}}</h1>
+   
+            <!--Content-->
+            <p class="challenge-desc">{{text}}</p>
+        </div>
+        {{/each}}
+    </div>
+  </div>

@@ -1,8 +1,12 @@
 {{> header}}
-<div class="main">
+<div class="homepage-main main">
   <div class="feed">
+    <div class="homepage-navbar">
+      <a href="/"><h1 class="is-active">Challenges</h1></a>
+      <a href="/feed"><h1>Posts</h1></a>
+    </div>
     {{#each challenges as |challenge|}}
-    <div class="post">
+    <div class="post homepage-post">
       <div class="challenge-header">
         <h1 class="challenge-title">{{challenge.title}}</h1>
         <h3 class="challenge-duration">Ends: {{challenge.ending_date}}</h3>
@@ -19,7 +23,7 @@
         <li>{{userChallenge.title}}</li>
       {{/each}}
     </ul>
-    <p class="tinytext">&copy; 2022 Pod 1</p>
+    <p class="tinytext copyright">&copy; 2022 Pod 1</p>
   </aside>
 </div>
 

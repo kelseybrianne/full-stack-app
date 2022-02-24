@@ -25,7 +25,7 @@ Challenge.init(
       defaultValue: DataTypes.NOW,
     },
     ending_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     }
   },
