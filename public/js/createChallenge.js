@@ -19,7 +19,7 @@ const createChallenge = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the homepage
-        // document.location.replace('/');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
