@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const moment = require('moment');
 
 class Challenge extends Model {}
 
@@ -21,11 +22,17 @@ Challenge.init(
     },
     starting_date: {
       type: DataTypes.DATE,
+      get() {
+        return moment(this.getDataValue('starting_date')).format('MMMM Do YYYY');
+    },
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     ending_date: {
       type: DataTypes.DATEONLY,
+      get() {
+        return moment(this.getDataValue('ending_date')).format('MMMM Do YYYY');
+    },
       allowNull: false,
     }
   },
