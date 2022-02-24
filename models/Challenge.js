@@ -31,7 +31,7 @@ Challenge.init(
     ending_date: {
       type: DataTypes.DATEONLY,
       get() {
-        return moment(this.getDataValue('ending_date')).format('MMMM Do YYYY');
+        return moment(this.getDataValue('ending_date')).endOf('day').fromNow(true);
     },
       allowNull: false,
     }
