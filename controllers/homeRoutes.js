@@ -5,29 +5,28 @@ const { Challenge, UserChallenge, User, Post } = require("../models");
 
 // get homepage (/)
 router.get("/", withAuth, async (req, res) => {
+
+  // UserChallenge.findAll where user_id = current users
+
+  // Build a list of challenge ids the user does have
+
   // Send the rendered Handlebars.js template back as the response
   const challengeData = await Challenge.findAll({
-    include: [
-      {
-        model: User,
-        through: {
-          model: UserChallenge,
-          // attributes: ["challenge_id", "user_id"],
-        },
-        where: {
-          // [Op.and]: [{ a: 5 }, { b: 6 }],            // (a = 5) AND (b = 6)
-          // [Op.or]: [{ a: 5 }, { b: 6 }],             // (a = 5) OR (b = 6)
-          id: {
-            // Basics
-            // [Op.eq]: 3,                              // = 3
-            [Op.ne]: req.session.user_id, // != 20
-            // [Op.is]: null,                           // IS NULL
-            // [Op.not]: true,                          // IS NOT TRUE
-            // [Op.or]: [5, 6],                         // (someAttribute = 5) OR (someAttribute = 6)
-          },
-        },
-      },
-    ],
+    where: {
+      id: {
+        // Where id is not in the list of known ids
+      }
+    }
+    // include: [
+    //   {
+    //     model: User,
+    //     through: {
+    //       model: UserChallenge,
+    //       // attributes: ["challenge_id", "user_id"],
+    //     }, 
+    //     where: {id: req.session.user_id}
+    //   }
+    // ]
   });
 
   const challenges = challengeData.map((challenge) => challenge.toJSON());
@@ -107,6 +106,11 @@ router.get("/profile", withAuth, async (req, res) => {
   const posts = postData.map((post) => post.toJSON());
   // Use req.session.user_id to get the current user
   
+  const userData = await User.findByPk(req.session.user_id)
+  const user = userData.get({ plain: true });
+  console.log(user);
+
+  // Use req.session.user_id to get the current user
   const userData = await User.findByPk(req.session.user_id)
   const user = userData.get({ plain: true });
   console.log(user);
