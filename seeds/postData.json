@@ -1,32 +1,33 @@
 [
-    {
-      "id": 1,
-      "text": "I'm grateful for angels watching over my parents and protecting them on their drive this weekend.",
-      "challenge_id": 6,
-      "user_id": 4
-    },
-    {
-      "id": 2,
-      "text": "Solution goes here",
-      "challenge_id": 3,
-      "user_id": 4
-    },
-    {
-      "id": 3,
-      "text": "Progress pic",
-      "challenge_id": 2,
-      "user_id": 4
-    },
-    {
-      "id": 4,
-      "text": "Solution to algorithm",
-      "challenge_id": 3,
-      "user_id": 1
-    },
-    {
-      "id": 5,
-      "text": "Solution to algorithm",
-      "challenge_id": 3,
-      "user_id": 2
-    }
-  ]
+  {
+    "id": 1,
+    "text": "Here is my solution for the recursion algorithm: let count = 1;\n        function recursiveFn() {\n            console.log(count);\n            if (count === 10) return;\n            count++;\n            recursiveFn();\n        }\n        \n        recursiveFn();",
+    "challenge_id": 3,
+    "user_id": 4
+  },
+  {
+    "id": 2,
+    "text": "I'm grateful for angels watching over my parents and protecting them on their drive this weekend.",
+    "date_created": "02/02/2022",
+    "challenge_id": 6,
+    "user_id": 4
+  },
+  {
+    "id": 3,
+    "text": "Progress pic",
+    "challenge_id": 2,
+    "user_id": 4
+  },
+  {
+    "id": 4,
+    "text": "function oddArray(arr) {\n let result = [];\n          function helperRecursiveFn(arr) {\n              if(arr.length === 0) {\nreturn; // 1\n} else if(arr[0] % 2 !== 0) {\n                  result.push(arr[0]); // 2\n              }\n              helperRecursiveFn(arr.slice(1)); // 3\n          }\n          helperRecursiveFn(arr);\n          return result;\n}\n\noddArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);\n      // OutPut -> [1, 3, 5, 7, 9]",
+    "challenge_id": 3,
+    "user_id": 1
+  },
+  {
+    "id": 5,
+    "text": "Naive search algorithm: function naiveSearch(mainStr, subStr) {\n          if (subStr.length > mainStr.length) return false;\n      \n          for(let i = 0; i < mainStr.length; i++) {\n             for(let j = 0; j < subStr.length; j++) {\n                  if(mainStr[i + j] !== subStr[j]) break;\n                  if(j === subStr.length - 1) return true; \n              }\n          }\n          return false;\n      }",
+    "challenge_id": 3,
+    "user_id": 2
+  }
+]
