@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "text": "function oddArray(arr) {\n let result = [];\n          function helperRecursiveFn(arr) {\n              if(arr.length === 0) {\nreturn; // 1\n} else if(arr[0] % 2 !== 0) {\n                  result.push(arr[0]); // 2\n              }\n              helperRecursiveFn(arr.slice(1)); // 3\n          }\n          helperRecursiveFn(arr);\n          return result;\n}\n\noddArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);\n      // OutPut -> [1, 3, 5, 7, 9]",
+    "text": "<div class='challenge-desc'><div>function oddArray(arr) {\n</div><div> let result = [];</div>\n          function helperRecursiveFn(arr) {\n              if(arr.length === 0) {\nreturn; // 1\n} else if(arr[0] % 2 !== 0) {\n                  result.push(arr[0]); // 2\n              }\n              helperRecursiveFn(arr.slice(1)); // 3\n          }\n          helperRecursiveFn(arr);\n          return result;\n}\n\noddArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);\n      // OutPut -> [1, 3, 5, 7, 9]</div>",
     "date_created": "02/24/2022",
     "challenge_id": 3,
     "user_id": 1

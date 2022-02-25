@@ -52,7 +52,7 @@ router.get("/", withAuth, async (req, res) => {
     const notjoinedChallengeData = await Challenge.findAll({
       where: {
         id: {
-          [Op.ne]: userChallengeIds
+          [Op.notIn]: userChallengeIds
         }
       }
     });
