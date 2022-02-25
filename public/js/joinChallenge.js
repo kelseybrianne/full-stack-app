@@ -12,9 +12,9 @@ const joinChallenge = async (event) => {
       });
       // This isn't taking me to the homepage.
       if (response.ok) {
-        // document.location.replace("/");
+        document.location.reload();
       } else {
-        alert("Failed to create account");
+        alert("Failed to join account");
       }
 
   };
