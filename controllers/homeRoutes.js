@@ -186,7 +186,7 @@ router.get("/feed", withAuth, async (req, res) => {
       },
       {
         model: Challenge,
-        attributes: ["title"],
+        attributes: ["title", "id"],
       },
     ],
     order: [
