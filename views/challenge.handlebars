@@ -1,20 +1,15 @@
 {{> header}}
 <div class="homepage-main main">
   <div class="feed">
-    <div class="homepage-navbar">
-      <a href="/"><h1 class="is-active challenge-title">{{challenge.title}}</h1></a>
+    <div class="challenge-page-header">
+      <a href="/"><h1 class="challenge-page-title challenge-title">{{title}}</h1></a>
+      <h3 class="challenge-duration"><span class="challenge-length">{{ending_date}} left</span></h3>
     </div>
     {{#each posts as |post|}}
       <div class="post">
            <a href="/profile/{{user.id}}"><h1 class="post-username"><i class="fas fa-user-circle small-profile profile"></i> {{user.username}}</h1></a> 
-            <p class="challenge-desc">
-                {{{post.text}}}
-                Post content
-            </p>
-            <p class="time-posted">
-                {{post.date_created}}
-                5 seconds ago
-            </p>
+            <p class="challenge-desc">{{post.text}}</p>
+            <p class="time-posted">{{post.date_created}}</p>
         </div>
     {{/each}}
   </div>
@@ -28,4 +23,5 @@
     <p class="tinytext copyright">&copy; 2022 Pod 1</p>
   </aside>
 </div>
+
 {{!-- <script src="/js/joinChallenge.js"></script> --}}

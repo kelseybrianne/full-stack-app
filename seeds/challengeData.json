@@ -35,5 +35,12 @@
     "title": "Gratitude Journal",
     "description": "Post something you're grateful for every day",
     "ending_date": "05/13/2022"
+  },
+  {
+    "id": 7,
+    "title": "Eat a lot",
+    "description": "Every week try a food you've never had before",
+    "ending_date": "06/14/2022"
   }
+  
 ]
