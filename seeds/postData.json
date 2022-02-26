@@ -40,5 +40,12 @@
     "date_created": "02/23/2022",
     "challenge_id": 6,
     "user_id": 4
+  },
+  {
+    "id": 7,
+    "text": "I ate chicken foot this week",
+    "date_created": "02/23/2022",
+    "challenge_id": 7,
+    "user_id": 7
   }
 ]
