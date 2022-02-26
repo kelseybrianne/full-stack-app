@@ -25,6 +25,18 @@ nav {
   width: 146px;
 }
 
+.challenge-page-header {
+  margin: 0px auto;
+  /* text-align: center; */
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+.challenge-page-title {
+  padding-top: 15px;
+}
+
 .homepage-navbar h1 {
   margin-bottom: -1px;
   padding-bottom: 15px;
