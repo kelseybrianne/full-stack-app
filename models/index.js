@@ -31,14 +31,4 @@ Challenge.belongsToMany(User, {
   through: UserChallenge,
 });
 
-// UserChallenge.belongsToMany(User, {
-//   foreignKey: "user_id",
-//   targetKey: "id",
-// })
-
-// UserChallenge.belongsToMany(Challenge, {
-//   foreignKey: "challenge_id",
-//   targetKey: "id",
-// })
-
 module.exports = { User, Post, Challenge, UserChallenge };

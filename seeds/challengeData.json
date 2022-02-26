@@ -1,39 +1,39 @@
 [
-    {
-      "id": 1,
-      "title": "Furry Selfie Series",
-      "description": "Post a pic of your furry friend every day",
-      "ending_date": "04/01/2022"
-    },
-    {
-      "id": 2,
-      "title": "75 Hard",
-      "description": "Every day you must do the following. Follow any nutrition plan with zero alcohol and no cheat meal. Complete two 45-minute workouts, one of which needs to be done outside. Drink a gallon of water. Read 10 pages of an educational or self-improvement book. Take a progress picture.",
-      "starting_date": "02/21/2022",
-      "ending_date": "05/07/2022"
-    },
-    {
-      "id": 3,
-      "title": "3 Books in 30 Days",
-      "description": "Read 3 books in 30 days and share your review after each one.",
-      "ending_date": "03/25/2022"
-    },
-    {
-      "id": 4,
-      "title": "The Ultimate Tech Quiz",
-      "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-      "ending_date": "03/01/2022"
-    },
-    {
-      "id": 5,
-      "title": "Roll 'Em Up",
-      "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-      "ending_date": "03/15/2022"
-    },
-    {
-      "id": 6,
-      "title": "Gratitude Journal",
-      "description": "Post something you're grateful for every day",
-      "ending_date": "05/13/2022"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Furry Selfie Series",
+    "description": "Post a pic of your furry friend every day",
+    "ending_date": "04/01/2022"
+  },
+  {
+    "id": 2,
+    "title": "75 Hard",
+    "description": "Every day you must do the following. Follow any nutrition plan with zero alcohol and no cheat meal. Complete two 45-minute workouts, one of which needs to be done outside. Drink a gallon of water. Read 10 pages of an educational or self-improvement book. Take a progress picture.",
+    "starting_date": "02/21/2022",
+    "ending_date": "05/07/2022"
+  },
+  {
+    "id": 3,
+    "title": "3 Books in 30 Days",
+    "description": "Read 3 books in 30 days and share your review after each one.",
+    "ending_date": "03/25/2022"
+  },
+  {
+    "id": 4,
+    "title": "The Ultimate Tech Quiz",
+    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "ending_date": "03/01/2022"
+  },
+  {
+    "id": 5,
+    "title": "Roll 'Em Up",
+    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "ending_date": "03/15/2022"
+  },
+  {
+    "id": 6,
+    "title": "Gratitude Journal",
+    "description": "Post something you're grateful for every day",
+    "ending_date": "05/13/2022"
+  }
+]

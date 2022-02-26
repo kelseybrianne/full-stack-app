@@ -5,7 +5,6 @@ class UserChallenge extends Model {}
 
 UserChallenge.init(
   {
-    // define columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -14,7 +13,6 @@ UserChallenge.init(
     },
     challenge_id: {
       type: DataTypes.INTEGER,
-      // References the Product model's id
       references: {
         model: 'challenge',
         key: 'id'
@@ -22,7 +20,6 @@ UserChallenge.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      // References the Tag model's id
       references: {
         model: 'user',
         key: 'id'

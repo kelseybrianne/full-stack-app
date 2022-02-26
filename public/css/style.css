@@ -25,12 +25,12 @@ nav {
   width: 146px;
 }
 
-.homepage-navbar h1{
-margin-bottom: -1px;
-padding-bottom: 15px;
-margin-right: 25px;
-font-family: "Raleway", sans-serif;
-font-weight: 200;
+.homepage-navbar h1 {
+  margin-bottom: -1px;
+  padding-bottom: 15px;
+  margin-right: 25px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
 }
 
 .is-active {
@@ -150,7 +150,6 @@ h2 {
 .header-icon {
   padding-right: 10px;
   color: #b6c2bb;
-
 }
 
 .profile {
@@ -237,7 +236,7 @@ p {
 }
 
 .light-text {
-  color:rgb(128, 128, 128);
+  color: rgb(128, 128, 128);
 }
 
 .tinytext {
@@ -249,12 +248,12 @@ p {
 .copyright {
   color: rgb(209, 209, 209);
   padding-top: 20px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .time-posted {
   color: rgb(131, 131, 131);
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-bottom: 0px;
   font-family: "Raleway", sans-serif;
   font-weight: 200;
@@ -269,7 +268,7 @@ a:hover {
   padding: 40px 20px 20px 20px;
   text-align: center;
   margin: 0px auto;
-  background-color:rgb(238, 238, 238);
+  background-color: rgb(238, 238, 238);
 }
 
 .profile-main {
