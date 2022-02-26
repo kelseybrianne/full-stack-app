@@ -19,7 +19,7 @@ Post.init(
     date_created: {
       type: DataTypes.DATE,
       get() {
-        return moment(this.getDataValue('date_created')).startOf('hour').fromNow();;
+        return moment(this.getDataValue('date_created')).startOf('minute').fromNow();;
     },
       allowNull: false,
       defaultValue: DataTypes.NOW,
