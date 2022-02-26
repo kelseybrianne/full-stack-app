@@ -21,7 +21,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the homepage
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("username or password is incorrect");
     }
   }
 };
