@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Op } = require("sequelize");
 const withAuth = require("../utils/auth");
 const { Challenge, UserChallenge, User, Post } = require("../models");
+const { sequelize } = require("../models/User");
 
 // get homepage
 router.get("/", withAuth, async (req, res) => {
@@ -82,7 +83,13 @@ router.get("/profile", withAuth, async (req, res) => {
         attributes: ["title"],
       },
     ],
+    order: [
+        ['date_created', 'DESC']
+      ]
   });
+
+
+
 
   const posts = postData.map((post) => post.toJSON());
 
@@ -129,6 +136,9 @@ router.get("/feed", withAuth, async (req, res) => {
         attributes: ["title"],
       },
     ],
+    order: [
+      ['date_created', 'DESC']
+    ]
   });
 
   const posts = postData.map((post) => post.toJSON());
