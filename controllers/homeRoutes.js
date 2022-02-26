@@ -186,7 +186,7 @@ router.get("/feed", withAuth, async (req, res) => {
       },
       {
         model: Challenge,
-        attributes: ["title", "id"],
+        attributes: ["id", "title"],
       },
     ],
     order: [
@@ -235,7 +235,7 @@ router.get("/challenge/:id", async (req, res) => {
         include: [
           {
             model: User,
-            attributes: ["username"],
+            attributes: ["id", "username"],
           }
         ]
       }
