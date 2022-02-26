@@ -67,7 +67,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-// get profile page 
+// get profile page
 router.get("/profile", withAuth, async (req, res) => {
   const postData = await Post.findAll({
     include: [
@@ -105,7 +105,7 @@ router.get("/profile", withAuth, async (req, res) => {
       {
         model: User,
         through: {
-          model: UserChallenge
+          model: UserChallenge,
         },
         where: { id: req.session.user_id },
       },
@@ -149,7 +149,7 @@ router.get("/feed", withAuth, async (req, res) => {
       {
         model: User,
         through: {
-          model: UserChallenge
+          model: UserChallenge,
         },
         where: { id: req.session.user_id },
       },
@@ -163,6 +163,42 @@ router.get("/feed", withAuth, async (req, res) => {
     posts,
     userChallenges,
     logged_in: req.session.logged_in,
+  });
+});
+
+router.get("/challenge/:id", async (req, res) => {
+  const challengeData = await Challenge.findByPk(req.params.id, {
+    include: [
+      {
+        model: User,
+        attributes: ["id", "username"],
+        through: {
+          model: UserChallenge,
+        },
+      },
+    ],
+  });
+  const challenge = challengeData.get({ plain: true });
+  console.log(challenge);
+
+  const postData = await Post.findAll({
+    where: {
+      challenge_id: req.params.id,
+    },
+    include: [
+      {
+        model: User,
+        attributes: ["id", "username"],
+      }
+    ]
+  });
+
+  const posts = postData.map((post) => post.get({ plain: true }));
+  // console.log({challenge});
+  res.render("challenge", {
+    challenge,
+    posts,
+    // logged_in: req.session.logged_in,
   });
 });
 

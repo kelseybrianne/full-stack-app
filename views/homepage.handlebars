@@ -8,7 +8,7 @@
     {{#each challenges as |challenge|}}
     <div class="post homepage-post">
       <div class="challenge-header">
-        <h1 class="challenge-title">{{challenge.title}}</h1>
+      <a href="/challenge/{{challenge.id}}">  <h1 class="challenge-title">{{challenge.title}}</h1></a>
         <h3 class="challenge-duration"><span class="challenge-length">For {{challenge.ending_date}}</span></h3>
       </div>
       <p class="challenge-desc">{{challenge.description}}</p>
