@@ -9,7 +9,7 @@
     <div class="post homepage-post">
       <div class="challenge-header">
       <a href="/challenge/{{challenge.id}}">  <h1 class="challenge-title">{{challenge.title}}</h1></a>
-        <h3 class="challenge-duration"><span class="challenge-length">For {{challenge.ending_date}}</span></h3>
+        <h3 class="challenge-duration"><span class="challenge-length">{{challenge.ending_date}} left</span></h3>
       </div>
       <p class="challenge-desc">{{challenge.description}}</p>
       <button class="join-in-btn" data-id="{{challenge.id}}">Join</button>
@@ -20,7 +20,7 @@
     <h2>Your Challenges</h2>
     <ul class="challenge-list">
       {{#each userChallenges as |userChallenge|}}
-        <li>{{userChallenge.title}}</li>
+        <a href="/challenge/{{userChallenge.id}}"><li>{{userChallenge.title}}</li></a>
       {{/each}}
     </ul>
     <p class="tinytext copyright">&copy; 2022 Pod 1</p>

@@ -176,6 +176,16 @@ router.get("/challenge/:id", async (req, res) => {
           model: UserChallenge,
         },
       },
+      {
+        model: Post,
+        attributes: ["text", "date_created"],
+        include: [
+          {
+            model: User,
+            attributes: ["username"],
+          }
+        ]
+      }
     ],
   });
   const challenge = challengeData.get({ plain: true });
@@ -196,8 +206,8 @@ router.get("/challenge/:id", async (req, res) => {
   const posts = postData.map((post) => post.get({ plain: true }));
   // console.log({challenge});
   res.render("challenge", {
-    challenge,
-    posts,
+    ...challenge,
+    // posts,
     // logged_in: req.session.logged_in,
   });
 });
