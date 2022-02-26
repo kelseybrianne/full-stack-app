@@ -57,17 +57,17 @@ router.get("/", withAuth, async (req, res) => {
       }
     });
 
-    // const notJoinedChallenges = notJoinedData.map((challenge) => challenge.toJSON());
+    const challenges = notjoinedChallengeData.map((challenge) => challenge.toJSON());
 
-    const notjoinedIds = notjoinedChallengeData.map((challenge) => challenge.id);
+    // const notjoinedIds = notjoinedChallengeData.map((challenge) => challenge.id);
 
 
-    console.log(userChallengeIds)
-    console.log(notjoinedIds)
+    // console.log(userChallengeIds)
+    // console.log(notjoinedIds)
 
 
     res.render("homepage", {
-      // challenges,
+      challenges,
       userChallenges,
       logged_in: req.session.logged_in,
     });
