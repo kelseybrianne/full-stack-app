@@ -7,17 +7,17 @@
     </div>
     {{#each posts as |post|}}
       <div class="post">
-            <h1 class="post-username"><i class="fas fa-user-circle small-profile profile"></i> {{post.user.username}}</h1>
+           <a href="/profile/{{user.id}}"><h1 class="post-username"><i class="fas fa-user-circle small-profile profile"></i> {{user.username}}</h1></a> 
             <p class="challenge-desc">{{post.text}}</p>
             <p class="time-posted">{{post.date_created}}</p>
         </div>
     {{/each}}
   </div>
-  <aside>
+<aside>
     <h2>Users Joined</h2>
     <ul class="challenge-list">
       {{#each users as |user|}}
-        <li>{{user.username}}</li>
+        <a href="/profile/{{user.id}}"><li>{{user.username}}</li></a>
       {{/each}}
     </ul>
     <p class="tinytext copyright">&copy; 2022 Pod 1</p>

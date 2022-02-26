@@ -80,7 +80,7 @@ router.get("/profile", withAuth, async (req, res) => {
       },
       {
         model: Challenge,
-        attributes: ["title"],
+        attributes: ["title", "id"],
       },
     ],
     order: [
@@ -124,12 +124,65 @@ router.get("/profile", withAuth, async (req, res) => {
   });
 });
 
+router.get("/profile/:id", async (req, res) => {
+  const userData = await User.findByPk(req.params.id);
+  const user = userData.get({ plain: true });
+
+  const postData = await Post.findAll({
+    where: {
+      user_id: req.params.id,
+    },
+    include: [
+      {
+        model: User,
+        attributes: ["id", "username"],
+      },
+      {
+        model: Challenge,
+        attributes: ["title", "id"],
+      },
+    ],
+    order: [
+        ['date_created', 'DESC']
+      ]
+  });
+
+  
+
+  const posts = postData.map((post) =>
+  post.toJSON()
+);
+
+const userChallengeData = await Challenge.findAll({
+  include: [
+    {
+      model: User,
+      through: {
+        model: UserChallenge,
+      },
+      where: { id: req.params.id },
+    },
+  ],
+});
+
+const userChallenges = userChallengeData.map((challenge) =>
+  challenge.toJSON()
+);
+
+    res.render("profile", {
+      posts,
+      user,
+      userChallenges,
+      logged_in: req.session.logged_in,
+    })
+  });
+
 router.get("/feed", withAuth, async (req, res) => {
   const postData = await Post.findAll({
     include: [
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["id", "username"],
       },
       {
         model: Challenge,
