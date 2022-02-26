@@ -1,5 +1,7 @@
 # Join In
 
+## Introduction
+
 Join In is an app where users can challenge themselves and others by creating challenges and joining challenges that others have created!
 
 Upon opening the application, you will be prompted to log in. Every user must be logged in to view the homepage, including challenges.
@@ -21,4 +23,30 @@ The posts tab is where you will see progress updates from users on how they are 
 [Link to Deployed Application on Heroku](https://join-in-app.herokuapp.com/login)
 
 
-![](./public/assets/app-screenshot.png)
+![Desktop view screenshot of homepage](./public/assets/app-screenshot.png)
+![mobileview](./public/assets/mobileview.png)
+
+## Technologies Used
+
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- jQuery
+- MySQL
+- Sequelize
+- Handlebars
+- Node.js
+- Express.js
+- Google Analytics
+
+## Contributors
+
+- [Kelsey Betteridge](https://github.com/kelseybrianne)
+- [Alberto Barrientos](https://github.com/Bertokeys1)
+- [Marshall Baccari](https://github.com/mbaccari)
+- [Maddy Kimborowicz](https://github.com/mkimborowicz)
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

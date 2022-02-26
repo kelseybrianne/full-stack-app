@@ -28,5 +28,30 @@
     "id": 6,
     "challenge_id": 6,
     "user_id": 4
+  },
+  {
+    "id": 7,
+    "challenge_id": 7,
+    "user_id": 7
+  },
+  {
+    "id": 8,
+    "challenge_id": 6,
+    "user_id": 4
+  },
+  {
+    "id": 9,
+    "challenge_id": 5,
+    "user_id": 7
+  },
+  {
+    "id": 10,
+    "challenge_id": 4,
+    "user_id": 7
+  },
+  {
+    "id": 11,
+    "challenge_id": 2,
+    "user_id": 7
   }
 ]
