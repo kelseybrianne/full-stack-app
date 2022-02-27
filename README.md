@@ -28,7 +28,6 @@ The posts tab is where you will see progress updates from users on how they are 
 
 ## Technologies Used
 
-- HTML
 - CSS
 - Bootstrap
 - JavaScript
