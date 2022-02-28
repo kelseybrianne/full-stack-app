@@ -16,9 +16,10 @@
   </div>
   <aside>
     <h2>Your Challenges</h2>
+  
     <ul class="challenge-list">
       {{#each userChallenges as |userChallenge|}}
-        <li>{{userChallenge.title}}</li>
+        <a href="/challenge/{{userChallenge.id}}"><li>{{userChallenge.title}}</li></a>
       {{/each}}
     </ul>
     <p class="tinytext copyright">&copy; 2022 Pod 1</p>
