@@ -53,5 +53,10 @@
     "id": 11,
     "challenge_id": 2,
     "user_id": 7
+  },
+  {
+    "id": 12,
+    "challenge_id": 8,
+    "user_id": 7
   }
 ]

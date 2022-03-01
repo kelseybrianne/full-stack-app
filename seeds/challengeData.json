@@ -41,6 +41,12 @@
     "title": "Eat a lot",
     "description": "Every week try a food you've never had before",
     "ending_date": "06/14/2022"
+  },
+  {
+    "id": 8,
+    "title": "Run For Sarah",
+    "description": "Sarah is my sister who just died from stomach cancer at age 30. Let's celebrate and honor Sarah's life by running a mile a day for 30 days!",
+    "ending_date": "03/28/2022"
   }
   
 ]

@@ -244,24 +244,26 @@ router.get("/challenge/:id", async (req, res) => {
   const challenge = challengeData.get({ plain: true });
   console.log(challenge);
 
-  const postData = await Post.findAll({
-    where: {
-      challenge_id: req.params.id,
-    },
+  const userChallengeData = await Challenge.findAll({
     include: [
       {
         model: User,
-        attributes: ["id", "username"],
-      }
-    ]
+        through: {
+          model: UserChallenge,
+        },
+        where: { id: req.session.user_id },
+      },
+    ],
   });
 
-  const posts = postData.map((post) => post.get({ plain: true }));
-  // console.log({challenge});
+  const userChallenges = userChallengeData.map((challenge) =>
+    challenge.toJSON()
+  );
+
   res.render("challenge", {
     ...challenge,
-    // posts,
-    // logged_in: req.session.logged_in,
+    userChallenges,
+    logged_in: req.session.logged_in
   });
 });
 
