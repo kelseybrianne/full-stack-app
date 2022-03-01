@@ -23,8 +23,8 @@ The posts tab is where you will see progress updates from users on how they are 
 [Link to Deployed Application on Heroku](https://join-in-app.herokuapp.com/login)
 
 
-![Desktop view screenshot of homepage](./public/assets/app-screenshot.png)
-![mobileview](./public/assets/mobileview.png)
+![Sign in page view](./public/assets/signinpage.png)
+![Desktop view screenshot of homepage](./public/assets/joinin-homepage.png)
 
 ## Technologies Used
 
